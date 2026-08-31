@@ -8,6 +8,7 @@ public record ProductRequest(
         @NotBlank(message = "Product name is required")
         @Size(min = 3, max = 100, message = "Product name must be between 3 and 100 characters")
         String name,
+
         @DecimalMin(value = "0.01", message = "Price must be greater than 0")
         @DecimalMax(value = "999999.99", message = "Price must be less than 1,000,000")
         @NotNull(message = "Price is required")
