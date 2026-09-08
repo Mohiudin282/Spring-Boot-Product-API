@@ -78,7 +78,7 @@ public class ProductService {
 
         if (!product.getSku().equals(request.sku()) && productRepository.existsBySku(request.sku())){
             throw new ProductValidationException(
-                    "Sku", request.sku(), "Product with " + request.sku() + "already exist");
+                    "Sku", request.sku(), "Product with " + request.sku() + " already exist");
         }
 
         product.setName(request.name());
